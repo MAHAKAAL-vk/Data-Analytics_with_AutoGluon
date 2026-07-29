@@ -1,0 +1,4 @@
+mxnet<2.0.0
+setuptools
+wheel
+autogluon --extra-index-url https://download.pytorch.org/whl/cpu   
