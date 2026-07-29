@@ -111,7 +111,7 @@ The model effectively captures:
 ### Step 1: Clone/Extract Project
 
 ```bash
-cd /media/mahakaal/kali1/Udacit_Projects/Data-Analytics_with_AutoGluon
+cd */Data-Analytics_with_AutoGluon
 ```
 
 ### Step 2: Create Virtual Environment
