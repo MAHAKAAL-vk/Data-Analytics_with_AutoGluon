@@ -1,6 +1,6 @@
 # Virtual environment
 .venv/
-
+.ipynb_checkpoints/
 # IDE and editor temporary files
 .vscode/
 .idea/
