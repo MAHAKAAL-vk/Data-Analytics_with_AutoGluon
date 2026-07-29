@@ -7,6 +7,7 @@ A machine learning project that predicts hourly bike-sharing rental demand using
 This project analyzes and predicts bike-sharing system demand by studying historical rental patterns, weather conditions, and temporal factors. The model achieved an **R² score of 0.99** and a **Mean Absolute Error (MAE) of 9.37**, demonstrating strong predictive performance.
 
 ### Key Insights
+
 - Bike-sharing adoption nearly **doubled between 2011 and 2012**
 - Distinct patterns emerge between **weekday commuting** (8 AM and 5 PM peaks) and **weekend leisure use**
 - Optimal rental conditions occur at **20°C to 30°C** with **20-60% humidity**
@@ -16,14 +17,15 @@ This project analyzes and predicts bike-sharing system demand by studying histor
 
 The project uses the **Bike-Sharing Demand Dataset** containing:
 
-| Component | Details |
-|-----------|---------|
-| **Training Set** | 10,886 hourly records with rental counts |
-| **Test Set** | 6,493 hourly records (counts to be predicted) |
-| **Time Period** | Jan 1, 2011 - Dec 31, 2012 |
-| **Features** | 11 original features (datetime, temperature, humidity, windspeed, weather, etc.) |
+| Component        | Details                                                                          |
+| ---------------- | -------------------------------------------------------------------------------- |
+| **Training Set** | 10,886 hourly records with rental counts                                         |
+| **Test Set**     | 6,493 hourly records (counts to be predicted)                                    |
+| **Time Period**  | Jan 1, 2011 - Dec 31, 2012                                                       |
+| **Features**     | 11 original features (datetime, temperature, humidity, windspeed, weather, etc.) |
 
 ### Dataset Location
+
 ```
 bike-sharing-demand/
 ├── train.csv          # Training data with target variable (count)
@@ -34,6 +36,7 @@ bike-sharing-demand/
 ## Features & Feature Engineering
 
 ### Original Features
+
 - **datetime**: Date and time of rental
 - **season**: 1=Spring, 2=Summer, 3=Fall, 4=Winter
 - **holiday**: Whether the day is a holiday
@@ -45,6 +48,7 @@ bike-sharing-demand/
 - **windspeed**: Wind speed
 
 ### Engineered Features
+
 - **hour**: Hour of day extracted from datetime
 - **day**: Day of week (0-6)
 - **month**: Month of year (1-12)
@@ -59,6 +63,7 @@ bike-sharing-demand/
 ## Model & Results
 
 ### Model Architecture
+
 - **Algorithm**: Random Forest Regressor
 - **Hyperparameters**:
   - n_estimators: 400 trees
@@ -67,12 +72,15 @@ bike-sharing-demand/
   - random_state: 52
 
 ### Performance Metrics (Training Set)
+
 - **R² Score**: 0.99 (explains 99% of variance)
 - **RMSE**: 15.03 (Root Mean Squared Error)
 - **MAE**: 9.37 (Mean Absolute Error)
 
 ### Key Model Findings
+
 The model effectively captures:
+
 1. **Temporal Patterns**: Distinguishes between commuting (weekdays) and leisure (weekends) usage
 2. **Seasonal Variations**: Accounts for demand changes across seasons
 3. **Weather Effects**: Identifies optimal comfort zones for rentals
@@ -96,21 +104,25 @@ The model effectively captures:
 ## Installation & Setup
 
 ### Prerequisites
+
 - Python 3.7+
 - pip or conda package manager
 
 ### Step 1: Clone/Extract Project
+
 ```bash
 cd /media/mahakaal/kali1/Udacit_Projects/Data-Analytics_with_AutoGluon
 ```
 
 ### Step 2: Create Virtual Environment
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
 ### Step 3: Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -118,11 +130,13 @@ pip install -r requirements.txt
 ## Usage
 
 ### Running the Notebook
+
 ```bash
 jupyter notebook project_notebook.ipynb
 ```
 
 ### Making Predictions
+
 The trained model is saved as `bike_model.pkl`. To load and use it:
 
 ```python
@@ -140,7 +154,9 @@ predictions = model.predict(test)
 ```
 
 ### Generating Submissions
+
 The notebook generates predictions and saves them to `submission.csv` with the format:
+
 ```
 datetime,count
 2011-01-20 00:00:00,1
@@ -152,22 +168,23 @@ datetime,count
 
 Core libraries used in this project:
 
-| Library | Purpose |
-|---------|---------|
-| **pandas** | Data manipulation and analysis |
-| **numpy** | Numerical computing |
+| Library          | Purpose                          |
+| ---------------- | -------------------------------- |
+| **pandas**       | Data manipulation and analysis   |
+| **numpy**        | Numerical computing              |
 | **scikit-learn** | Machine learning (Random Forest) |
-| **matplotlib** | Static visualization |
-| **seaborn** | Statistical visualization |
-| **plotly** | Interactive visualization |
-| **joblib** | Model serialization |
-| **autogluon** | AutoML framework |
+| **matplotlib**   | Static visualization             |
+| **seaborn**      | Statistical visualization        |
+| **plotly**       | Interactive visualization        |
+| **joblib**       | Model serialization              |
+| **autogluon**    | AutoML framework                 |
 
 See `requirements.txt` for specific versions.
 
 ## Analysis Methodology
 
 ### 1. Exploratory Data Analysis (EDA)
+
 - Dataset shape, info, and descriptive statistics
 - Missing value analysis
 - Temporal and seasonal pattern exploration
@@ -175,18 +192,21 @@ See `requirements.txt` for specific versions.
 - Correlation between features and rental demand
 
 ### 2. Feature Engineering
+
 - Time-based features (hour, day, month, year)
 - Interaction features (peak hour detection, temperature difference)
 - Categorical encoding (one-hot encoding for season and weather)
 - Feature renaming for clarity
 
 ### 3. Model Training
+
 - Train-test split using provided datasets
 - Random Forest with optimized hyperparameters
 - Training on full training set
 - Validation using R², RMSE, and MAE metrics
 
 ### 4. Prediction & Submission
+
 - Predictions on test set
 - Constraint application (minimum count = 1)
 - Submission file generation
