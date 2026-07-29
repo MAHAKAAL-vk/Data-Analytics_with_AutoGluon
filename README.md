@@ -77,6 +77,20 @@ bike-sharing-demand/
 - **RMSE**: 15.03 (Root Mean Squared Error)
 - **MAE**: 9.37 (Mean Absolute Error)
 
+### Training Run Summary
+
+This project includes a single recorded training run. No Kaggle leaderboard score was stored in the repository.
+
+| Run | Model                   | Hyperparameters                                       | Training Metrics                    | Kaggle Score  |
+| --- | ----------------------- | ----------------------------------------------------- | ----------------------------------- | ------------- |
+| 1   | Random Forest Regressor | `n_estimators=400`, `max_depth=50`, `random_state=52` | `R²=0.99`, `RMSE=15.03`, `MAE=9.37` | Not available |
+
+> To create the graphs requested in the project checklist, collect one row per training run in a table or CSV, then plot:
+>
+> - run number vs. evaluation metric (R² / RMSE / MAE)
+> - run number vs. Kaggle score
+> - a summary table of runs, hyperparameters, and Kaggle score
+
 ### Key Model Findings
 
 The model effectively captures:
