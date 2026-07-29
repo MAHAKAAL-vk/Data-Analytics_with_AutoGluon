@@ -1,0 +1,9 @@
+# Virtual environment
+.venv/
+
+# IDE and editor temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
