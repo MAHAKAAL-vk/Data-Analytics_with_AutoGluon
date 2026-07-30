@@ -1,2 +1,4 @@
-run,model,n_estimators,max_depth,rmse_train,rmse_valid
-1,RandomForest,500,20,15.387631782477612,40.213035821080865
+run,model,n_estimators,max_depth,random_state,r2,rmse_train,rmse_val,kaggle_score
+1,RandomForest,500,20,42,0.99,15.34,150.96,0.48254
+2,RandomForest,600,25,32,0.99,14.98,38.57,0.48074
+3,RandomForest,800,40,67,0.99,15.0,38.67,0.48198
