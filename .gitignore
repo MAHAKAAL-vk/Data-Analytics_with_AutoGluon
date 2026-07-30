@@ -8,3 +8,5 @@
 *.swo
 *~
 *.pkl
+report-template.md
+project.ipynb

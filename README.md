@@ -199,6 +199,11 @@ See `requirements.txt` for specific versions.
 
 ### 1. Exploratory Data Analysis (EDA)
 
+## Report
+
+- **Project report**: See [report.md](report.md) for the full project write-up, findings, and training/run summary.
+- **Notebook**: The main analysis is in [project_notebook.ipynb](project_notebook.ipynb). The notebook follows the provided project template and includes feature engineering, model training, validation, and submission generation.
+
 - Dataset shape, info, and descriptive statistics
 - Missing value analysis
 - Temporal and seasonal pattern exploration
